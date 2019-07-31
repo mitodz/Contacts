@@ -1,9 +1,22 @@
 package contacts;
 
+import java.util.Scanner;
+
 public class Contact {
     private String name;
     private String surname;
     private String number = "";
+
+    public Contact () {};
+
+    public Contact (Scanner scanner) {
+        System.out.println("Enter the name: > ");
+        name = scanner.nextLine();
+        System.out.println("Enter the surname: > ");
+        surname = scanner.nextLine();
+        System.out.print("Enter the number: > ");
+        number = scanner.nextLine();
+    }
 
     public String getName() {
         return name;
