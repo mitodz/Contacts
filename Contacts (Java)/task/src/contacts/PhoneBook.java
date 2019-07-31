@@ -1,21 +1,30 @@
 package contacts;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class PhoneBook {
-    private HashMap<String, Contact> contacts;
+    private ArrayList<Contact> contacts;
 
     public PhoneBook () {
-        contacts = new HashMap<>();
+        contacts = new ArrayList<>();
     }
 
     public PhoneBook (Contact contact) {
-        contacts = new HashMap<>();
+        contacts = new ArrayList<>();
         System.out.println("A record created!\n" +
                 "A Phone Book with a single record created!");
     }
 
     public void addContact (Contact contact) {
-        contacts.put(contact.getName(), contact);
+        contacts.add(contact);
+    }
+
+    public int getCount() {
+        return contacts.size();
+    }
+
+    public void removeContact (int index) {
+        contacts.remove(index);
+        contacts.trimToSize();
     }
 }

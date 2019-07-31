@@ -3,7 +3,7 @@ package contacts;
 public class Contact {
     private String name;
     private String surname;
-    private String number;
+    private String number = "";
 
     public String getName() {
         return name;
@@ -22,10 +22,10 @@ public class Contact {
     }
 
     public String getNumber() {
-        return number;
+            return number;
     }
 
-    public boolean isCorrect (String number) {
+    private boolean isCorrect(String number) {
         return number.matches("(\\+?\\w{1,2}[\\s|\\-]?\\(?\\w{2,14}\\)?)" +
                 "(([\\s|\\-]\\w{2,14}){3})?");
     }
@@ -34,5 +34,9 @@ public class Contact {
         if (isCorrect(number)) {
             this.number = number;
         }
+    }
+
+    public boolean hasNumber () {
+        return !number.isEmpty();
     }
 }

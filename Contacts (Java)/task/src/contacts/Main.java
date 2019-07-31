@@ -15,7 +15,6 @@ public class Main {
         System.out.print("Enter the number:\n" +
                 "> ");
         String number = scanner.nextLine();
-        System.out.println(first.isCorrect(number));
         first.setName(number);
 
         PhoneBook phoneBook = new PhoneBook();
