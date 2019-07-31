@@ -19,6 +19,31 @@ public class Main {
                         System.out.println("No records to show!");
                     } else phoneBook.showList();
                     break;
+                case "remove":
+                    if (phoneBook.isEmpty()) {
+                        System.out.println("No records to remove!");
+                    } else {
+                        phoneBook.showList();
+                        System.out.print("Select a record: > ");
+                        phoneBook.removeContact(scanner.nextInt());
+                        System.out.println("The record removed!");
+                    }
+                    break;
+                case "edit":
+                    if (phoneBook.isEmpty()) {
+                        System.out.println("No records to edit!");
+                    } else {
+                        phoneBook.showList();
+                        System.out.print("Select a record: > ");
+                        int index = scanner.nextInt();
+                        System.out.print("Select a field (name, surname, number): > ");
+                        String field = scanner.nextLine();
+                        System.out.print("Enter " + field + ": > ");
+                        String string = scanner.nextLine();
+                        phoneBook.editContact(index, field, string);
+                        System.out.println("The record updated!");
+                    }
+                    break;
                 case "exit":
                     break outer;
                 case "count":

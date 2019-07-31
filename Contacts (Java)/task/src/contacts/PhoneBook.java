@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class PhoneBook {
     private ArrayList<Contact> contacts;
 
-    public PhoneBook () {
+    public PhoneBook() {
         contacts = new ArrayList<>();
     }
 
-    public PhoneBook (Contact contact) {
+    public PhoneBook(Contact contact) {
         contacts = new ArrayList<>();
         System.out.println("A record created!\n" +
                 "A Phone Book with a single record created!");
     }
 
-    public void addContact (Contact contact) {
+    public void addContact(Contact contact) {
         contacts.add(contact);
         System.out.println("The record added.");
     }
@@ -24,16 +24,30 @@ public class PhoneBook {
         return contacts.size();
     }
 
-    public void removeContact (int index) {
+    public void editContact(int index, String field, String string) {
+        switch (field) {
+            case "name":
+                contacts.get(index).setName(string);
+                break;
+            case "surname":
+                contacts.get(index).setSurname(string);
+                break;
+            case "number":
+                contacts.get(index).setNumber(string);
+                break;
+        }
+    }
+
+    public void removeContact(int index) {
         contacts.remove(index);
         contacts.trimToSize();
     }
 
-    public boolean isEmpty () {
+    public boolean isEmpty() {
         return contacts.isEmpty();
     }
 
-    public void showList () {
+    public void showList() {
         int count = 1;
         for (Contact c : contacts) {
             System.out.println(count++ + ". " + c.getName() + " " +
