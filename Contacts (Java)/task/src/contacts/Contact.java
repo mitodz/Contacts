@@ -10,12 +10,15 @@ public class Contact {
     public Contact () {};
 
     public Contact (Scanner scanner) {
-        System.out.println("Enter the name: > ");
+        System.out.print("Enter the name: > ");
         name = scanner.nextLine();
-        System.out.println("Enter the surname: > ");
+        System.out.print("Enter the surname: > ");
         surname = scanner.nextLine();
         System.out.print("Enter the number: > ");
-        number = scanner.nextLine();
+        String buf = scanner.nextLine();
+        if (!isCorrect(buf)) {
+            System.out.println("Wrong number format!");
+        } else number = buf;
     }
 
     public String getName() {
@@ -39,14 +42,14 @@ public class Contact {
     }
 
     private boolean isCorrect(String number) {
-        return number.matches("(\\+?\\w{1,2}[\\s|\\-]?\\(?\\w{2,14}\\)?)" +
-                "(([\\s|\\-]\\w{2,14}){3})?");
+        return number.matches("(\\+?\\(?\\w+\\)?[\\s|\\-]?\\(?\\w{2,}\\)?)" +
+                "(([\\s|\\-]\\w{2,}){3})?") && !number.matches(".*\\(.*\\(");
     }
 
     public void setNumber(String number) {
         if (isCorrect(number)) {
             this.number = number;
-        }
+        } else System.out.println("Wrong number format!");
     }
 
     public boolean hasNumber () {

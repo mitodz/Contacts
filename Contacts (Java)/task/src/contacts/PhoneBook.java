@@ -17,6 +17,7 @@ public class PhoneBook {
 
     public void addContact (Contact contact) {
         contacts.add(contact);
+        System.out.println("The record added.");
     }
 
     public int getCount() {
@@ -26,5 +27,17 @@ public class PhoneBook {
     public void removeContact (int index) {
         contacts.remove(index);
         contacts.trimToSize();
+    }
+
+    public boolean isEmpty () {
+        return contacts.isEmpty();
+    }
+
+    public void showList () {
+        int count = 1;
+        for (Contact c : contacts) {
+            System.out.println(count++ + ". " + c.getName() + " " +
+                    c.getSurname() + ", " + (c.hasNumber() ? c.getNumber() : "[no number]"));
+        }
     }
 }
