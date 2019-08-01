@@ -54,7 +54,10 @@ public class Contact {
     public void setNumber(String number) {
         if (isCorrect(number)) {
             this.number = number;
-        } else System.out.println("Wrong number format!");
+        } else {
+            this.number = "[no number]";
+            System.out.println("Wrong number format!");
+        }
     }
 
     public boolean hasNumber () {
