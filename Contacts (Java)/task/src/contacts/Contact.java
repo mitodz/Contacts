@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Ashot Tonaganyan mitodzzz@gmail.com
+ */
+
 package contacts;
 
 import java.util.Scanner;
@@ -41,9 +45,10 @@ public class Contact {
             return number;
     }
 
-    private boolean isCorrect(String number) {
-        return number.matches("(\\+?\\(?\\w+\\)?[\\s|\\-]?\\(?\\w{2,}\\)?)" +
-                "(([\\s|\\-]\\w{2,}){3})?") && !number.matches(".*\\(.*\\(");
+    public boolean isCorrect(String number) {
+        return number.matches("((\\+?\\(?\\w+\\)?(([\\s|\\-]\\w{2,})+)?)|" +
+                "(\\+?\\w+[\\s|\\-]?\\(?\\w{2,}\\)?(([\\s|\\-]\\w{2,})+)?))") && number.length()>1;
+
     }
 
     public void setNumber(String number) {

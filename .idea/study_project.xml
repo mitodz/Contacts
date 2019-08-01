@@ -356,7 +356,7 @@
                       <option name="index" value="2" />
                       <option name="name" value="Create a menu" />
                       <option name="record" value="-1" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Failed" />
                       <option name="files">
                         <map>
                           <entry key="test/ContactsTest.java">
@@ -410,6 +410,20 @@
                                 <option name="highlightErrors" value="true" />
                                 <option name="name" value="src/contacts/PhoneBook.java" />
                                 <option name="text" value="package contacts;&#10;&#10;public class PhoneBook {&#10;    private Contact[] contacts;&#10;    private int count;&#10;&#10;    public PhoneBook () {&#10;        contacts = new Contact[1000];&#10;        count = 0;&#10;    }&#10;&#10;    public void addContact (Contact contact) {&#10;        contacts[count] = contact;&#10;        count++;&#10;        System.out.println(&quot;A record created!\n&quot; +&#10;                &quot;A Phone Book with a single record created!&quot;);&#10;    }&#10;}&#10;" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="test/contacts/ContactTest.java">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="test/contacts/ContactTest.java" />
+                                <option name="text" value="" />
                                 <option name="trackChanges" value="true" />
                                 <option name="visible" value="true" />
                               </TaskFile>

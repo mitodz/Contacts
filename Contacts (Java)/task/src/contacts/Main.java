@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Ashot Tonaganyan mitodzzz@gmail.com
+ */
+
 package contacts;
 
 import java.util.Scanner;
