@@ -355,7 +355,7 @@
                       <option name="id" value="5325" />
                       <option name="index" value="2" />
                       <option name="name" value="Create a menu" />
-                      <option name="record" value="-1" />
+                      <option name="record" value="2" />
                       <option name="status" value="Solved" />
                       <option name="files">
                         <map>
@@ -446,7 +446,7 @@
                       <option name="id" value="5326" />
                       <option name="index" value="3" />
                       <option name="name" value="Upgrade your contacts" />
-                      <option name="record" value="-1" />
+                      <option name="record" value="3" />
                       <option name="status" value="Unchecked" />
                       <option name="files">
                         <map>
@@ -473,6 +473,34 @@
                                 <option name="highlightErrors" value="false" />
                                 <option name="name" value="src/contacts/Main.java" />
                                 <option name="text" value="package contacts;&#10;&#10;public class Main {&#10;    public static void main(String[] args) {&#10;        System.out.println(&quot;Hello World!&quot;);&#10;    }&#10;}&#10;" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="src/contacts/Contact.java">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="src/contacts/Contact.java" />
+                                <option name="text" value="/*&#10; * Copyright (c) 2019. Ashot Tonaganyan mitodzzz@gmail.com&#10; */&#10;&#10;package contacts;&#10;&#10;import java.util.Scanner;&#10;&#10;public class Contact {&#10;    private String name;&#10;    private String surname;&#10;    private String number = &quot;&quot;;&#10;&#10;    public Contact () {};&#10;&#10;    public Contact (Scanner scanner) {&#10;        System.out.print(&quot;Enter the name: &gt; &quot;);&#10;        name = scanner.nextLine();&#10;        System.out.print(&quot;Enter the surname: &gt; &quot;);&#10;        surname = scanner.nextLine();&#10;        System.out.print(&quot;Enter the number: &gt; &quot;);&#10;        String buf = scanner.nextLine();&#10;        if (!isCorrect(buf)) {&#10;            System.out.println(&quot;Wrong number format!&quot;);&#10;        } else number = buf;&#10;    }&#10;&#10;    public String getName() {&#10;        return name;&#10;    }&#10;&#10;    public void setName(String name) {&#10;        this.name = name;&#10;    }&#10;&#10;    public String getSurname() {&#10;        return surname;&#10;    }&#10;&#10;    public void setSurname(String surname) {&#10;        this.surname = surname;&#10;    }&#10;&#10;    public String getNumber() {&#10;            return number;&#10;    }&#10;&#10;    public boolean isCorrect(String number) {&#10;        return number.matches(&quot;((\\+?\\(?\\w+\\)?(([\\s|\\-]\\w{2,})+)?)|&quot; +&#10;                &quot;(\\+?\\w+[\\s|\\-]?\\(?\\w{2,}\\)?(([\\s|\\-]\\w{2,})+)?))&quot;) &amp;&amp; number.length()&gt;1;&#10;&#10;    }&#10;&#10;    public void setNumber(String number) {&#10;        if (isCorrect(number)) {&#10;            this.number = number;&#10;        } else {&#10;            this.number = &quot;[no number]&quot;;&#10;            System.out.println(&quot;Wrong number format!&quot;);&#10;        }&#10;    }&#10;&#10;    public boolean hasNumber () {&#10;        return !number.isEmpty();&#10;    }&#10;}&#10;" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="src/contacts/PhoneBook.java">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="src/contacts/PhoneBook.java" />
+                                <option name="text" value="/*&#10; * Copyright (c) 2019. Ashot Tonaganyan mitodzzz@gmail.com&#10; */&#10;&#10;package contacts;&#10;&#10;import java.util.ArrayList;&#10;&#10;public class PhoneBook {&#10;    private ArrayList&lt;Contact&gt; contacts;&#10;&#10;    public PhoneBook() {&#10;        contacts = new ArrayList&lt;&gt;();&#10;    }&#10;&#10;    public PhoneBook(Contact contact) {&#10;        contacts = new ArrayList&lt;&gt;();&#10;        System.out.println(&quot;A record created!\n&quot; +&#10;                &quot;A Phone Book with a single record created!&quot;);&#10;    }&#10;&#10;    public void addContact(Contact contact) {&#10;        contacts.add(contact);&#10;    }&#10;&#10;    public int getCount() {&#10;        return contacts.size();&#10;    }&#10;&#10;    public void editContact(int index, String field, String string) {&#10;        switch (field) {&#10;            case &quot;name&quot;:&#10;                contacts.get(index - 1).setName(string);&#10;                break;&#10;            case &quot;surname&quot;:&#10;                contacts.get(index - 1).setSurname(string);&#10;                break;&#10;            case &quot;number&quot;:&#10;                contacts.get(index - 1).setNumber(string);&#10;                break;&#10;        }&#10;    }&#10;&#10;    public void removeContact(int index) {&#10;        contacts.remove(index - 1);&#10;        contacts.trimToSize();&#10;    }&#10;&#10;    public boolean isEmpty() {&#10;        return contacts.isEmpty();&#10;    }&#10;&#10;    public void showList() {&#10;        int count = 1;&#10;        for (Contact c : contacts) {&#10;            System.out.println(count++ + &quot;. &quot; + c.getName() + &quot; &quot; +&#10;                    c.getSurname() + &quot;, &quot; + (c.hasNumber() ? c.getNumber() : &quot;[no number]&quot;));&#10;        }&#10;    }&#10;}&#10;" />
                                 <option name="trackChanges" value="true" />
                                 <option name="visible" value="true" />
                               </TaskFile>

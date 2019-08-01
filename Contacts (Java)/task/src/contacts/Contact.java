@@ -11,9 +11,12 @@ public class Contact {
     private String surname;
     private String number = "";
 
-    public Contact () {};
+    public Contact() {
+    }
 
-    public Contact (Scanner scanner) {
+    ;
+
+    public Contact(Scanner scanner) {
         System.out.print("Enter the name: > ");
         name = scanner.nextLine();
         System.out.print("Enter the surname: > ");
@@ -42,12 +45,12 @@ public class Contact {
     }
 
     public String getNumber() {
-            return number;
+        return number;
     }
 
     public boolean isCorrect(String number) {
         return number.matches("((\\+?\\(?\\w+\\)?(([\\s|\\-]\\w{2,})+)?)|" +
-                "(\\+?\\w+[\\s|\\-]?\\(?\\w{2,}\\)?(([\\s|\\-]\\w{2,})+)?))") && number.length()>1;
+                "(\\+?\\w+[\\s|\\-]?\\(?\\w{2,}\\)?(([\\s|\\-]\\w{2,})+)?))") && number.length() > 1;
 
     }
 
@@ -60,7 +63,7 @@ public class Contact {
         }
     }
 
-    public boolean hasNumber () {
+    public boolean hasNumber() {
         return !number.isEmpty();
     }
 }
