@@ -13,6 +13,7 @@ public class Main {
             switch (buf) {
                 case "add":
                     phoneBook.addContact(new Contact(scanner));
+                    System.out.println("The record added.");
                     break;
                 case "list":
                     if (phoneBook.isEmpty()) {
@@ -25,7 +26,7 @@ public class Main {
                     } else {
                         phoneBook.showList();
                         System.out.print("Select a record: > ");
-                        phoneBook.removeContact(scanner.nextInt());
+                        phoneBook.removeContact(Integer.parseInt(scanner.nextLine()));
                         System.out.println("The record removed!");
                     }
                     break;
@@ -35,7 +36,7 @@ public class Main {
                     } else {
                         phoneBook.showList();
                         System.out.print("Select a record: > ");
-                        int index = scanner.nextInt();
+                        int index = Integer.parseInt(scanner.nextLine());
                         System.out.print("Select a field (name, surname, number): > ");
                         String field = scanner.nextLine();
                         System.out.print("Enter " + field + ": > ");

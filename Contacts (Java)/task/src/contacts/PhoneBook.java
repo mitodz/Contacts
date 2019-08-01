@@ -17,7 +17,6 @@ public class PhoneBook {
 
     public void addContact(Contact contact) {
         contacts.add(contact);
-        System.out.println("The record added.");
     }
 
     public int getCount() {
@@ -27,19 +26,19 @@ public class PhoneBook {
     public void editContact(int index, String field, String string) {
         switch (field) {
             case "name":
-                contacts.get(index).setName(string);
+                contacts.get(index - 1).setName(string);
                 break;
             case "surname":
-                contacts.get(index).setSurname(string);
+                contacts.get(index - 1).setSurname(string);
                 break;
             case "number":
-                contacts.get(index).setNumber(string);
+                contacts.get(index - 1).setNumber(string);
                 break;
         }
     }
 
     public void removeContact(int index) {
-        contacts.remove(index);
+        contacts.remove(index - 1);
         contacts.trimToSize();
     }
 
