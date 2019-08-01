@@ -48,7 +48,7 @@ public class Contact {
         return number;
     }
 
-    public boolean isCorrect(String number) {
+    private boolean isCorrect(String number) {
         return number.matches("((\\+?\\(?\\w+\\)?(([\\s|\\-]\\w{2,})+)?)|" +
                 "(\\+?\\w+[\\s|\\-]?\\(?\\w{2,}\\)?(([\\s|\\-]\\w{2,})+)?))") && number.length() > 1;
 
