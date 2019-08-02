@@ -16,7 +16,9 @@ public class Main {
             String buf = scanner.nextLine();
             switch (buf) {
                 case "add":
-                    phoneBook.addContact(new Contact(scanner));
+                    System.out.print("Enter the number: > ");
+                    String number = scanner.nextLine();
+                    phoneBook.addContact(new Contact(number));
                     System.out.println("The record added.");
                     break;
                 case "list":

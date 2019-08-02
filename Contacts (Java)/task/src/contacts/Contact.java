@@ -4,28 +4,21 @@
 
 package contacts;
 
-import java.util.Scanner;
+import java.util.Date;
 
 public class Contact {
     private String name;
-    private String surname;
     private String number = "";
+
 
     public Contact() {
     }
 
-    ;
-
-    public Contact(Scanner scanner) {
-        System.out.print("Enter the name: > ");
-        name = scanner.nextLine();
-        System.out.print("Enter the surname: > ");
-        surname = scanner.nextLine();
-        System.out.print("Enter the number: > ");
-        String buf = scanner.nextLine();
-        if (!isCorrect(buf)) {
+    public Contact(String number) {
+        if (!isCorrect(number)) {
+            this.number = "[no number]";
             System.out.println("Wrong number format!");
-        } else number = buf;
+        } else this.number = number;
     }
 
     public String getName() {
@@ -36,14 +29,6 @@ public class Contact {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
     public String getNumber() {
         return number;
     }
@@ -51,7 +36,6 @@ public class Contact {
     private boolean isCorrect(String number) {
         return number.matches("((\\+?\\(?\\w+\\)?(([\\s|\\-]\\w{2,})+)?)|" +
                 "(\\+?\\w+[\\s|\\-]?\\(?\\w{2,}\\)?(([\\s|\\-]\\w{2,})+)?))") && number.length() > 1;
-
     }
 
     public void setNumber(String number) {
